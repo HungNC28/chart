@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import LineChart from "./component/LineChart/lineChart";
+import BarChart from "./component/BarChart/barChart";
+import MultiChart from "./component/MultiChart/multiChart";
+import Nav from "./Nav/Nav";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <>
+            <Nav />
+            <Routes>
+                <Route path="/line" element={<LineChart />} />
+                <Route path="/bar" element={<BarChart />} />
+                <Route path="/multi" element={<MultiChart />} />
+            </Routes>
+        </>
+    );
 }
 
 export default App;
